@@ -1,22 +1,24 @@
-const { index, store, show, update, destroy } = require('../controllers/booksController');
+const HomeController = require('../controllers/HomeController');
+const BooksController = require('../controllers/booksController');
+const ArticleController = require('../controllers/ArticleController');
 
 const router = require('express').Router();
 const apiRouter = require('./api');
 
-// router.get('/books', index)
-// router.get('/books/:id', show)
-// router.post('/books', store)
-// router.put('/books/:id', update)
-// router.delete('/books/:id', delete)
+// homepage
+router.get('/', HomeController.index);
+
+// article
+router.get('/articles', ArticleController.index);
 
 // books routes
 router.route('/books')
-    .get(index)
-    .post(store);
+    .get(BooksController.index)
+    .post(BooksController.store);
 router.route('/books/:id')
-    .get(show)
-    .put(update)
-    .delete(destroy);
+    .get(BooksController.show)
+    .put(BooksController.update)
+    .delete(BooksController.destroy);
 
 router.use('/api', apiRouter);
 

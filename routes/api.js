@@ -1,14 +1,14 @@
-const { index, store, show, update, destroy } = require('../controllers/UserController');
+const UserController = require('../controllers/UserController');
 
 const router = require('express').Router();
 
 router.route('/users')
-    .get(index)
-    .post(store)
+    .get(UserController.index)
+    .post(UserController.store)
 
 router.route('/users/:id')
-    .get(show)
-    .put(update)
-    .delete(destroy)
+    .get(UserController.show)
+    .put(UserController.update)
+    .delete(UserController.destroy)
 
 module.exports = router;
