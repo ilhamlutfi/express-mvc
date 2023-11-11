@@ -1,5 +1,5 @@
 const index = async (req, res) => {
-    return res.render('Article/index');
+    return res.render('article/index');
 }
 
 module.exports = ({ index });

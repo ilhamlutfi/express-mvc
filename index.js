@@ -7,6 +7,7 @@ const engine = require('ejs-mate');
 const port = process.env.PORT || 3000;
 const base_url = `http://localhost:${port}`;
 
+app.locals.base_url = base_url; // for global base_url
 app.use(express.json()) // for get request.body with json
 app.use(router) // use router
 app.use(express.static('public')); // middleware for use folder "public"
