@@ -15,7 +15,7 @@ const index = async (req, res) => {
             error: "Internal Server Error",
             code: 500
         });
-    }
+    } 0
 }
 
 const show = async (req, res) => {

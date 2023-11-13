@@ -1,6 +1,8 @@
-<%- layout('layouts/templates') %>
+<%- layout('layouts/templates'); %>
 
-<% block('css').append('<link type="text/css" href="/custom.css">') %>
+<% block('css', `<link type="text/css" href="/custom1.css">
+    <link type="text/css" href="/custom2.css">`
+); %>
 
 <div class="container-fluid">
 
@@ -323,5 +325,4 @@
 
 </div>
 
-<% block('js').append('<script type="text/css" href="/custom.js"></script>') %>
-
+<% block('js').append('<script type="text/css" href="/custom.js"></script>'); %>
